@@ -1,66 +1,67 @@
 package com.projetos.fila;
 
-public class Fila {
+public class Fila<T> {
 
-    private Node refNodeEntradaFila;
+    private Node<T> refNodeEntradaFila;
 
-    public Fila(){
+    public Fila() {
         this.refNodeEntradaFila = null;
     }
 
-    public void enqueue(Node newNode){
+    public void enqueue(T object) {
+        Node<T> newNode = new Node<>(object);
         newNode.setRefNode(refNodeEntradaFila);
         refNodeEntradaFila = newNode;
     }
 
-    public Node first(){
-        if(!this.isEmpty()){
-            Node firstNode = refNodeEntradaFila;
-            while (true){
-                if(firstNode.getRefNode() != null){
+    public T first() {
+        if (!this.isEmpty()) {
+            Node<T> firstNode = refNodeEntradaFila;
+            while (true) {
+                if (firstNode.getRefNode() != null) {
                     firstNode = firstNode.getRefNode();
-                }else{
+                } else {
                     break;
                 }
 
             }
-            return firstNode;
+            return firstNode.getObject();
         }
         return null;
     }
 
-    public Node dequeue(){
-        if(!this.isEmpty()){
-            Node firstNode = refNodeEntradaFila;
-            Node auxNode = refNodeEntradaFila;
-            while (true){
-                if(firstNode.getRefNode() != null){
+    public T dequeue() {
+        if (!this.isEmpty()) {
+            Node<T> firstNode = refNodeEntradaFila;
+            Node<T> auxNode = refNodeEntradaFila;
+            while (true) {
+                if (firstNode.getRefNode() != null) {
                     auxNode = firstNode;
                     firstNode = firstNode.getRefNode();
-                }else{
+                } else {
                     auxNode.setRefNode(null);
                     break;
                 }
 
             }
-            return firstNode;
+            return firstNode.getObject();
         }
         return null;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return refNodeEntradaFila == null ? true : false;
     }
 
     @Override
     public String toString() {
         String stringRetorno = "";
-        Node auxNode = refNodeEntradaFila;
+        Node<T> auxNode = refNodeEntradaFila;
 
-        if(refNodeEntradaFila != null){
-            while (true){
+        if (refNodeEntradaFila != null) {
+            while (true) {
                 stringRetorno += "[Node{object=" + auxNode.getObject() + "}]--->";
-                if(auxNode.getRefNode() != null){
+                if (auxNode.getRefNode() != null) {
                     auxNode = auxNode.getRefNode();
                 } else {
                     stringRetorno += "null";

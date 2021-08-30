@@ -1,31 +1,31 @@
 package com.projetos.fila;
 
-public class Node {
+public class Node<T>{
 
-    private Object object;
-    private Node refNode;
+    private T object;
+    private Node<T> refNode;
 
     public Node(){
     }
 
-    public Node(Object object){
+    public Node(T object){
         this.refNode = null;
         this.object = object;
     }
 
-    public Object getObject() {
+    public T getObject() {
         return object;
     }
 
-    public void setObject(Object object) {
+    public void setObject(T object) {
         this.object = object;
     }
 
-    public Node getRefNode() {
+    public Node<T> getRefNode() {
         return refNode;
     }
 
-    public void setRefNode(Node refNode) {
+    public void setRefNode(Node<T> refNode) {
         this.refNode = refNode;
     }
 

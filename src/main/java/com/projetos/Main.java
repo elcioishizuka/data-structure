@@ -43,12 +43,12 @@ public class Main {
 
         System.out.println(minhaPilha.top());
 
-        Fila minhaFila = new Fila();
+        Fila<String> minhaFila = new Fila<>();
 
-        minhaFila.enqueue(new Node("primeiro"));
-        minhaFila.enqueue(new Node("segundo"));
-        minhaFila.enqueue(new Node("terceiro"));
-        minhaFila.enqueue(new Node("quarto"));
+        minhaFila.enqueue("primeiro");
+        minhaFila.enqueue("segundo");
+        minhaFila.enqueue("terceiro");
+        minhaFila.enqueue("quarto");
 
         System.out.println(minhaFila);
 
@@ -56,7 +56,7 @@ public class Main {
 
         System.out.println(minhaFila);
 
-        minhaFila.enqueue(new Node("último"));
+        minhaFila.enqueue("último");
 
         System.out.println(minhaFila);
 
