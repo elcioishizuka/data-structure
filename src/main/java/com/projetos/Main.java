@@ -21,6 +21,23 @@ public class Main {
         System.out.println(no1.getProximoNo().getProximoNo().getProximoNo());
         System.out.println(no1.getProximoNo().getProximoNo().getProximoNo().getProximoNo());
 
-    }
 
+        Pilha minhaPilha = new Pilha();
+        minhaPilha.push(new NodePilha(1));
+        minhaPilha.push(new NodePilha(2));
+        minhaPilha.push(new NodePilha(3));
+        minhaPilha.push(new NodePilha(4));
+        minhaPilha.push(new NodePilha(5));
+        minhaPilha.push(new NodePilha(6));
+        minhaPilha.push(new NodePilha(7));
+
+        System.out.println(minhaPilha);
+
+        minhaPilha.pop();
+        System.out.println(minhaPilha);
+
+        System.out.println(minhaPilha.top());
+
+
+    }
 }
