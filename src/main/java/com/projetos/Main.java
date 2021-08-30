@@ -1,5 +1,10 @@
 package com.projetos;
 
+import com.projetos.fila.Fila;
+import com.projetos.fila.Node;
+import com.projetos.pilha.NodePilha;
+import com.projetos.pilha.Pilha;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -38,6 +43,24 @@ public class Main {
 
         System.out.println(minhaPilha.top());
 
+        Fila minhaFila = new Fila();
+
+        minhaFila.enqueue(new Node("primeiro"));
+        minhaFila.enqueue(new Node("segundo"));
+        minhaFila.enqueue(new Node("terceiro"));
+        minhaFila.enqueue(new Node("quarto"));
+
+        System.out.println(minhaFila);
+
+        System.out.println(minhaFila.dequeue());
+
+        System.out.println(minhaFila);
+
+        minhaFila.enqueue(new Node("último"));
+
+        System.out.println(minhaFila);
+
+        System.out.println(minhaFila.first());
 
     }
 }
