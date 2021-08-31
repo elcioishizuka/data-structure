@@ -1,5 +1,6 @@
 package com.projetos;
 
+import com.projetos.circularList.CircularList;
 import com.projetos.doublyLinkedList.DoublyLinkedList;
 import com.projetos.fila.Fila;
 import com.projetos.listaEncadeada.LinkedList;
@@ -101,6 +102,33 @@ public class Main {
         System.out.println(myDoublyLinkedList);
 
         System.out.println(myDoublyLinkedList.get(3));
+
+
+        CircularList<String> myCircularList = new CircularList<>();
+
+        myCircularList.add("Circular1");
+        System.out.println(myCircularList);
+        myCircularList.remove(0);
+        System.out.println(myCircularList);
+
+        myCircularList.add("Circular2");
+        myCircularList.add("Circular3");
+        myCircularList.add("Circular4");
+        myCircularList.add("Circular5");
+
+        System.out.println(myCircularList);
+
+        System.out.println(myCircularList.get(0));
+        System.out.println(myCircularList.get(1));
+        System.out.println(myCircularList.get(2));
+        System.out.println(myCircularList.get(3));
+        System.out.println(myCircularList.get(4));
+
+        for (int i = 0; i < 20; i++) {
+            System.out.println(myCircularList.get(i));
+        }
+
+
 
     }
 }
