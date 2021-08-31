@@ -1,5 +1,6 @@
 package com.projetos;
 
+import com.projetos.doublyLinkedList.DoublyLinkedList;
 import com.projetos.fila.Fila;
 import com.projetos.listaEncadeada.LinkedList;
 import com.projetos.pilha.NodePilha;
@@ -80,6 +81,26 @@ public class Main {
         System.out.println(myLinkedList.remove(3));
 
         System.out.println(myLinkedList);
+
+
+        DoublyLinkedList<String> myDoublyLinkedList = new DoublyLinkedList<>();
+
+        myDoublyLinkedList.add("c1");
+        myDoublyLinkedList.add("c2");
+        myDoublyLinkedList.add("c3");
+        myDoublyLinkedList.add("c4");
+        myDoublyLinkedList.add("c5");
+        myDoublyLinkedList.add("c6");
+        myDoublyLinkedList.add("c7");
+
+        System.out.println(myDoublyLinkedList);
+
+        myDoublyLinkedList.remove(3);
+        myDoublyLinkedList.add(3, "99");
+
+        System.out.println(myDoublyLinkedList);
+
+        System.out.println(myDoublyLinkedList.get(3));
 
     }
 }
